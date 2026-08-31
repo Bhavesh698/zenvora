@@ -1,0 +1,63 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","align":"wide","style":{"spacing":{"padding":{"top":"1.5rem","bottom":"4rem"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group alignwide">
+
+	<!-- wp:woocommerce/breadcrumbs {"fontSize":"x-small"} /-->
+
+	<!-- wp:woocommerce/product-image-gallery /-->
+
+	<!-- wp:group {"style":{"spacing":{"padding":{"top":"2rem"}}},"layout":{"type":"constrained","contentSize":"640px"}} -->
+	<div class="wp-block-group">
+
+		<!-- wp:post-terms {"term":"product_cat","fontSize":"x-small","textColor":"accent","style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.06em"}}} /-->
+
+		<!-- wp:woocommerce/product-title {"level":1,"fontSize":"xx-large"} /-->
+
+		<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"}} -->
+		<div class="wp-block-group">
+			<!-- wp:woocommerce/product-rating {"productId":0} /-->
+			<!-- wp:woocommerce/product-sku {"fontSize":"x-small","textColor":"muted"} /-->
+			<!-- wp:woocommerce/product-stock-indicator {"fontSize":"x-small"} /-->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:woocommerce/product-price {"fontSize":"x-large","className":"zv-price"} /-->
+
+		<!-- wp:woocommerce/product-summary {"fontSize":"small","textColor":"contrast-soft"} /-->
+
+		<!-- wp:woocommerce/add-to-cart-form /-->
+
+		<!-- wp:woocommerce/product-button {"className":"is-style-outline","style":{"border":{"radius":"2px"}}} /-->
+
+		<!-- wp:group {"style":{"spacing":{"padding":{"top":"1.5rem"}},"border":{"top":{"width":"1px","color":"var:preset|color|border"}}},"layout":{"type":"constrained"}} -->
+		<div class="wp-block-group">
+			<!-- wp:woocommerce/product-meta {"fontSize":"x-small","textColor":"muted"} /-->
+			<!-- wp:paragraph {"fontSize":"x-small","textColor":"muted"} -->
+			<p class="has-muted-color has-text-color has-x-small-font-size">Free shipping · 30-day returns · Secure checkout</p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"3.5rem"}},"border":{"top":{"width":"1px","color":"var:preset|color|border"}}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignwide">
+		<!-- wp:woocommerce/product-details /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"3.5rem"}}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignwide">
+		<!-- wp:heading {"level":2} -->
+		<h2>Related Products</h2>
+		<!-- /wp:heading -->
+		<!-- wp:woocommerce/related-products {"columns":4,"rows":1} /-->
+	</div>
+	<!-- /wp:group -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
