@@ -1,0 +1,276 @@
+/* =====================================================================
+   Zenvora — supplementary chrome
+   Everything expressible through theme.json (color, type, spacing) lives
+   there. This file only covers structure/behaviour block settings can't
+   reach: the announcement bar, product-card badges & hover swap, the
+   hang-tag corner signature, tabs, and footer dark-theme overrides.
+   ===================================================================== */
+
+/* ---------- Announcement bar ---------- */
+.zv-announce {
+	background: var(--wp--preset--color--contrast);
+	color: #EDE8DF;
+	font-size: 0.75rem;
+}
+.zv-announce .wp-block-group { min-height: 38px; }
+.zv-announce a { color: #D8D2C6; }
+.zv-announce a:hover { color: #fff; }
+.zv-announce select {
+	background: transparent;
+	color: #D8D2C6;
+	border: none;
+	font-size: 0.75rem;
+	font-family: var(--wp--preset--font-family--body);
+}
+
+/* ---------- Header search ---------- */
+.zv-search-shell {
+	border: 1.5px solid var(--wp--preset--color--contrast);
+	border-radius: 2px;
+	overflow: hidden;
+}
+.zv-search-shell input[type="search"],
+.zv-search-shell input[type="text"] {
+	border: none;
+	background: transparent;
+	padding: 14px 16px;
+}
+.zv-search-shell button {
+	background: var(--wp--preset--color--contrast);
+	color: #fff;
+}
+.zv-search-shell button:hover { background: var(--wp--preset--color--accent-dark); }
+
+/* ---------- Category sidebar ---------- */
+.zv-cat-panel { border: 1px solid var(--wp--preset--color--border); border-radius: 3px; }
+.zv-cat-panel li a {
+	display: flex;
+	justify-content: space-between;
+	padding: 11px 20px;
+	border-bottom: 1px solid var(--wp--preset--color--border);
+	font-size: 0.84375rem;
+}
+.zv-cat-panel li:last-child a { border-bottom: none; }
+.zv-cat-panel li a:hover { background: var(--wp--preset--color--accent-soft); }
+
+/* ---------- Signature: hang-tag corner ---------- */
+.zv-tag-corner {
+	position: relative;
+	overflow: hidden;
+}
+.zv-tag-corner::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 26px;
+	height: 26px;
+	z-index: 3;
+	background:
+		radial-gradient(circle 3px at 8px 8px, var(--wp--preset--color--base) 3px, transparent 3.5px),
+		linear-gradient(225deg, var(--wp--preset--color--surface) 50%, transparent 50.5%);
+}
+
+/* ---------- Quick shopping chips ---------- */
+.zv-quick-chip {
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 3px;
+	transition: 0.2s ease;
+	text-align: center;
+}
+.zv-quick-chip:hover {
+	border-color: var(--wp--preset--color--accent);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 24px rgba(30, 27, 24, 0.06);
+}
+
+/* ---------- Product tabs ---------- */
+.zv-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.zv-tab-btn {
+	padding: 9px 18px;
+	font-size: 0.78125rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	color: var(--wp--preset--color--muted);
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 20px;
+	background: transparent;
+	cursor: pointer;
+}
+.zv-tab-btn.is-active {
+	background: var(--wp--preset--color--contrast);
+	color: #fff;
+	border-color: var(--wp--preset--color--contrast);
+}
+.zv-tab-panel { display: none; }
+.zv-tab-panel.is-active { display: block; }
+
+/* ---------- Product cards (Query Loop items) ---------- */
+.zv-product-card {
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 3px;
+	transition: 0.2s ease;
+	position: relative;
+}
+.zv-product-card:hover {
+	border-color: var(--wp--preset--color--contrast);
+	box-shadow: 0 8px 24px rgba(30, 27, 24, 0.06);
+}
+.zv-product-card .zv-media { position: relative; aspect-ratio: 1 / 1; overflow: hidden; }
+.zv-product-card .zv-media img { width: 100%; height: 100%; object-fit: cover; }
+.zv-product-card .zv-media .zv-hover-img {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	transition: opacity 0.35s ease;
+}
+.zv-product-card:hover .zv-hover-img { opacity: 1; }
+
+.zv-badges { position: absolute; top: 10px; left: 10px; display: flex; flex-direction: column; gap: 6px; z-index: 2; }
+.zv-badge {
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: 0.625rem;
+	font-weight: 500;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	padding: 4px 8px;
+	border-radius: 2px;
+	color: #fff;
+}
+.zv-badge.is-sale { background: var(--wp--preset--color--sale); }
+.zv-badge.is-new { background: var(--wp--preset--color--new); }
+.zv-badge.is-off { background: var(--wp--preset--color--contrast); }
+
+.zv-quick-actions {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	z-index: 2;
+	opacity: 0;
+	transform: translateX(6px);
+	transition: 0.2s ease;
+}
+.zv-product-card:hover .zv-quick-actions { opacity: 1; transform: translateX(0); }
+.zv-quick-actions button {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: #fff;
+	border: 1px solid var(--wp--preset--color--border);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	cursor: pointer;
+}
+.zv-quick-actions button:hover { background: var(--wp--preset--color--contrast); border-color: var(--wp--preset--color--contrast); color: #fff; }
+
+.zv-price del { color: var(--wp--preset--color--muted); font-family: var(--wp--preset--font-family--mono); }
+.zv-price ins {
+	text-decoration: none;
+	font-family: var(--wp--preset--font-family--mono);
+	font-weight: 600;
+	margin-left: 8px;
+}
+.zv-price {
+	font-family: var(--wp--preset--font-family--mono);
+	font-weight: 600;
+}
+
+/* Star ratings rendered by WooCommerce's product rating block */
+.zv-product-card .star-rating { color: var(--wp--preset--color--accent); font-size: 0.75rem; }
+
+/* ---------- Newsletter section ---------- */
+.zv-newsletter { background: var(--wp--preset--color--contrast); border-radius: 3px; color: #fff; }
+.zv-newsletter input[type="email"] {
+	background: #26221D;
+	border: 1px solid #4A453D;
+	color: #fff;
+	padding: 14px 16px;
+	border-radius: 2px 0 0 2px;
+}
+.zv-newsletter input[type="email"]::placeholder { color: #8C8578; }
+.zv-newsletter .wp-block-button__link {
+	border-radius: 0 2px 2px 0 !important;
+	background: var(--wp--preset--color--accent) !important;
+}
+.zv-newsletter .wp-block-button__link:hover { background: var(--wp--preset--color--accent-dark) !important; }
+
+/* ---------- Footer ---------- */
+.zv-footer { background: #221F1B; color: #C9C3B8; }
+.zv-footer h4 { color: #fff; font-family: var(--wp--preset--font-family--body); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8125rem; }
+.zv-footer a { color: #9C968A; }
+.zv-footer a:hover { color: #fff; }
+.zv-footer hr { border-color: #3A342B; }
+.zv-social-icon {
+	width: 34px;
+	height: 34px;
+	border: 1px solid #4A453D;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.zv-social-icon:hover { background: var(--wp--preset--color--accent); border-color: var(--wp--preset--color--accent); }
+.zv-payment-icons span {
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: 0.625rem;
+	border: 1px solid #4A453D;
+	border-radius: 3px;
+	padding: 5px 9px;
+	color: #9C968A;
+}
+
+/* ---------- Promo banners ---------- */
+.zv-promo { border-radius: 3px; }
+.zv-promo.is-dark { background: #221F1B; color: #fff; }
+.zv-promo.is-dark a { color: var(--wp--preset--color--accent); }
+
+/* ---------- Trusted brands ---------- */
+.zv-brand-mark {
+	color: var(--wp--preset--color--contrast-soft);
+	opacity: 0.55;
+	margin-right: 2.5rem;
+}
+.zv-brand-mark:last-child { margin-right: 0; }
+.zv-brand-mark:hover { opacity: 1; color: var(--wp--preset--color--accent-dark); }
+
+/* ---------- Why choose Zenvora ---------- */
+.zv-why-icon { width: 52px; height: 52px; }
+.zv-why-icon p { margin: 0; font-size: 1.1rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+	.zv-announce .zv-announce-left { display: none; }
+	.zv-hero-grid { grid-template-columns: 1fr !important; }
+	.zv-cat-panel { display: none; }
+	.zv-cat-cards-grid { grid-template-columns: repeat(3, 1fr) !important; }
+	.zv-quick-links-grid { grid-template-columns: repeat(3, 1fr) !important; }
+	.zv-why-grid { grid-template-columns: repeat(2, 1fr) !important; row-gap: 2rem; }
+	.zv-promo-grid { grid-template-columns: 1fr !important; }
+	.zv-footer-grid { grid-template-columns: 1fr 1fr !important; row-gap: 2rem; }
+	.wp-block-woocommerce-product-collection ul.wc-block-product-template,
+	.wp-block-woocommerce-product-collection .products {
+		grid-template-columns: repeat(4, 1fr) !important;
+	}
+}
+@media (max-width: 760px) {
+	.zv-cat-cards-grid { grid-template-columns: repeat(2, 1fr) !important; }
+	.zv-quick-links-grid { grid-template-columns: repeat(2, 1fr) !important; }
+	.zv-why-grid { grid-template-columns: 1fr !important; }
+	.zv-footer-grid { grid-template-columns: 1fr 1fr !important; }
+	.wp-block-woocommerce-product-collection ul.wc-block-product-template,
+	.wp-block-woocommerce-product-collection .products {
+		grid-template-columns: repeat(2, 1fr) !important;
+	}
+}
+@media (max-width: 600px) {
+	.zv-product-card .zv-quick-actions { display: none; }
+	.zv-tabs { gap: 8px; }
+	.zv-newsletter { flex-direction: column; align-items: flex-start; }
+	.zv-newsletter-form, .zv-newsletter .wp-block-group { width: 100%; }
+}
