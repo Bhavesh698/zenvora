@@ -243,6 +243,7 @@
 .zv-why-icon { width: 52px; height: 52px; }
 .zv-why-icon p { margin: 0; font-size: 1.1rem; }
 
+<<<<<<< HEAD
 /* ---------- Explicit grid defaults ----------
    WordPress generates grid CSS per-block dynamically from the "layout"
    attribute, but that generation can silently fail to apply on some
@@ -257,6 +258,8 @@
 .zv-promo-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.25rem; }
 .zv-footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1.1fr; gap: 2rem; }
 
+=======
+>>>>>>> ed789dd14846b832afdaa45d3bd2ae266b4646ff
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
 	.zv-announce .zv-announce-left { display: none; }

@@ -57,6 +57,7 @@ Signature: a hang-tag "corner clip" on category cards (.zv-tag-corner) — a
            nod to a physical price tag that ties the card system back to
            retail without being a decorative gimmick.
 
+<<<<<<< HEAD
 == Known gotchas (found via a real install, fixed in this version) ==
 
 - Logo/nav on a site that already has content: wp:site-title and wp:navigation
@@ -81,6 +82,8 @@ Signature: a hang-tag "corner clip" on category cards (.zv-tag-corner) — a
   for every .zv-*-grid class, so the layout no longer depends solely on core
   generating that CSS correctly for every attribute combination.
 
+=======
+>>>>>>> ed789dd14846b832afdaa45d3bd2ae266b4646ff
 == Before you activate ==
 
 1. This theme is built around WooCommerce. Install and activate WooCommerce

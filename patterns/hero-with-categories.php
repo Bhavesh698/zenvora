@@ -69,14 +69,20 @@ $zv_sidebar_categories = array(
 				<!-- wp:button {"style":{"border":{"radius":"2px"}}} -->
 				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo zenvora_get_shop_link(); ?>">Shop Now</a></div>
 				<!-- /wp:button -->
+<<<<<<< HEAD
 				<!-- wp:button {"className":"is-style-outline","textColor":"contrast","style":{"border":{"radius":"2px","color":"var(--wp--preset--color--contrast)","width":"1.5px"}}} -->
 				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-contrast-color has-text-color wp-element-button" style="border-color:var(--wp--preset--color--contrast);border-width:1.5px" href="<?php echo esc_url( home_url( '/collections/' ) ); ?>">Explore Collection</a></div>
+=======
+				<!-- wp:button {"className":"is-style-outline","style":{"border":{"radius":"2px"}}} -->
+				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/collections/' ) ); ?>">Explore Collection</a></div>
+>>>>>>> ed789dd14846b832afdaa45d3bd2ae266b4646ff
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->
 
 			<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"}} -->
 			<div class="wp-block-group">
+<<<<<<< HEAD
 				<!-- wp:paragraph {"fontSize":"small","textColor":"contrast-soft"} -->
 				<p class="has-contrast-soft-color has-text-color has-small-font-size">Free Shipping</p>
 				<!-- /wp:paragraph -->
@@ -88,6 +94,19 @@ $zv_sidebar_categories = array(
 				<!-- /wp:paragraph -->
 				<!-- wp:paragraph {"fontSize":"small","textColor":"contrast-soft"} -->
 				<p class="has-contrast-soft-color has-text-color has-small-font-size">24/7 Support</p>
+=======
+				<!-- wp:paragraph {"fontSize":"small"} -->
+				<p class="has-small-font-size">Free Shipping</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"fontSize":"small"} -->
+				<p class="has-small-font-size">Secure Payment</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"fontSize":"small"} -->
+				<p class="has-small-font-size">30 Days Returns</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"fontSize":"small"} -->
+				<p class="has-small-font-size">24/7 Support</p>
+>>>>>>> ed789dd14846b832afdaa45d3bd2ae266b4646ff
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
